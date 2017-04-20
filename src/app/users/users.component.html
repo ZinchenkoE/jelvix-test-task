@@ -1,0 +1,10 @@
+<h2>Users:</h2>
+<ul>
+  <li *ngFor="let user of users">
+    <div class="username"><span class="label">Username: </span>{{user.username}}</div>
+    <div class="email"   ><span class="label">Email: </span><a href="mailto:{{user.email}}">{{user.email}}</a></div>
+    <div class="phone"   ><span class="label">Phone: </span><a href="tel:{{user.phone}}">{{user.phone}}</a></div>
+    <div class="company" ><span class="label">Company: </span>{{user.company}}</div>
+    <div class="posts"   ><a [routerLink]="['/posts', user.id]">Read user's posts</a></div>
+  </li>
+</ul>
