@@ -12,8 +12,7 @@ import 'rxjs/add/observable/throw';
 export class DataService {
 	rootUrl: string = 'https://jsonplaceholder.typicode.com';
 
-	constructor(private http: Http) {
-	}
+	constructor(private http: Http) {}
 
 	getUsers(): Observable<User[]> {
 		let url = this.rootUrl + '/users';

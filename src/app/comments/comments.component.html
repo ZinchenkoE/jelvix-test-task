@@ -1,8 +1,9 @@
 <h2 *ngIf="post">Comment on "{{post.title}}":</h2>
-<ul>
-  <li *ngFor="let comment of comments">
-    <div class="name" >{{comment.name}}</div>
-    <div class="body" >{{comment.body}}</div>
-    <div class="email"><span class="label">Email: </span><a href="mailto:{{comment.email}}">{{comment.email}}</a></div>
-  </li>
-</ul>
+<md-card *ngFor="let comment of comments">
+    <div class="item name label">{{comment.name}}</div>
+    <div class="item body">{{comment.body}}</div>
+    <div class="item email">
+        <span class="label">Email: </span>
+        <a href="mailto:{{comment.email}}">{{comment.email}}</a>
+    </div>
+</md-card>
