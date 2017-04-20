@@ -9,6 +9,8 @@ import {PostsComponent} from './posts/posts.component';
 import {CommentsComponent} from './comments/comments.component';
 import {DataService} from "./_shared/data.service";
 import {Routes, RouterModule} from "@angular/router";
+import {MdButtonModule, MaterialModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
 	{path: 'users', component: UsersComponent},
@@ -29,6 +31,9 @@ const appRoutes: Routes = [
 		FormsModule,
 		HttpModule,
 		RouterModule.forRoot(appRoutes),
+		MaterialModule,
+		MdButtonModule,
+		BrowserAnimationsModule
 	],
 	providers: [DataService],
 	bootstrap: [AppComponent]
