@@ -1,6 +1,11 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {UsersComponent} from './users.component';
+import {BrowserModule}                    from "@angular/platform-browser";
+import {HttpModule}                       from "@angular/http";
+import {BrowserAnimationsModule}          from "@angular/platform-browser/animations";
+import {RouterTestingModule}              from "@angular/router/testing";
+import {MaterialModule, MdButtonModule}   from "@angular/material";
+import {DataService}                      from "../_shared/data.service";
+import {UsersComponent}                   from './users.component';
 
 describe('UsersComponent', () => {
     let component: UsersComponent;
@@ -8,9 +13,17 @@ describe('UsersComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [UsersComponent]
-        })
-            .compileComponents();
+            declarations: [UsersComponent],
+            imports: [
+                RouterTestingModule,
+                BrowserModule,
+                MaterialModule,
+                HttpModule,
+                MdButtonModule,
+                BrowserAnimationsModule
+            ],
+            providers: [DataService],
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -22,4 +35,12 @@ describe('UsersComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should has not empty users array', () => {
+        component.ngOnInit();
+        console.log(component);
+        expect(component.users.length).toBeGreaterThan(0);
+    });
+
 });
+
