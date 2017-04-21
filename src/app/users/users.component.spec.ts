@@ -36,11 +36,5 @@ describe('UsersComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should has not empty users array', () => {
-        component.ngOnInit();
-        console.log(component);
-        expect(component.users.length).toBeGreaterThan(0);
-    });
-
-});
+ });
 
